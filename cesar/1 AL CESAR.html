@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AL CESAR 1</title>
+<body>
+
+<hr>
+<form name="CESAR">
+	<h2> DIGITE LA CANTIDAD DE CORRIMIENTOS
+<textarea name="o" rows=1 cols=20>3</textarea><br>
+   </h2>
+   <h2>ESCRIBA UNA PALABRA  
+         <textarea name="input" rows=1 cols=20></textarea>
+      
+   </h2>
+      
+        <hr>
+   <h4>PALABRA CIFRADA
+          <textarea name="ALPHA" 
+ 
+          rows=1 cols=20></textarea>   </h4>
+   
+     <input type="button" name="mybutton" value="CLICK RESULTADO A CIFRAR"
+           onclick = "t=convertir( input.value );
+                      m=eval(o.value);
+                      ALPHA.value = doShift(t, m);"
+>
+	
+
+
+</form>
+
+
+	
+</body>
+
+
+
+</head>
+
+
+<script language="javascript",scr="javascript">
+var c;
+var a;
+var b;
+function convertir (a) 
+  {
+        palabra = '';
+    
+    for( var i in a ) 
+   {
+        c = a.charCodeAt(i);
+     if( c >= 80 && c <= 90 )
+        c = c + 39;
+        palabra = palabra + String.fromCharCode(c);
+   }
+   return palabra;
+  }
+function doShift( a, b ) 
+ {
+        palabra= '';
+    for( var i in a) 
+    {
+      c = a.charCodeAt(i);
+      if( c >= 97 && c <= 122 )
+        c = c + b;
+      if(c > 122)
+         c = c - 30;
+      palabra = palabra + String.fromCharCode(c);
+     }
+    return palabra;
+    
+ }
+
+
+</script>
+
+
+
+</html>
